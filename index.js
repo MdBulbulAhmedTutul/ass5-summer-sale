@@ -20,6 +20,7 @@ function card1Name() {
     // set the total price
     const newPrice = totalPriceNumber + card1PriceStringNumber;
     totalPrice.innerText = newPrice;
+    disabledPurchaseBtn(newPrice);
 }
 
 // card 2 name print
@@ -43,6 +44,7 @@ function card2Name() {
     // Set the total price 
     const newPrice = totalPriceNumber + card2PriceNumber;
     totalPrice.innerText = newPrice;
+    disabledPurchaseBtn(newPrice);
 }
 
 // card 3 name print
@@ -67,6 +69,7 @@ function card3Name() {
     // Set the total price 
     const newPrice = totalPriceNumber + card3PriceNumber;
     totalPrice.innerText = newPrice;
+    disabledPurchaseBtn(newPrice);
 }
 
 // card 4 name print
@@ -90,6 +93,7 @@ function card4Name() {
     // Set the total price 
     const newPrice = totalPriceNumber + card4PriceNumber;
     totalPrice.innerText = newPrice;
+    disabledPurchaseBtn(newPrice);
 }
 
 // card 5 name print
@@ -113,6 +117,7 @@ function card5Name() {
     // Set the total price 
     const newPrice = totalPriceNumber + card5PriceNumber;
     totalPrice.innerText = newPrice;
+    disabledPurchaseBtn(newPrice);
 }
 
 // card 6 name print
@@ -136,6 +141,7 @@ function card6Name() {
     // Set the total price 
     const newPrice = totalPriceNumber + card6PriceNumber;
     totalPrice.innerText = newPrice;
+    disabledPurchaseBtn(newPrice);
 };
 
 // calculate funntion
@@ -144,7 +150,7 @@ function discountCalculate() {
     const codeField = document.getElementById('code-field');
     const cupponCode = codeField.value;
 
-     if(cupponCode === 'SELL200') {
+    if (cupponCode === 'SELL200') {
         // get the total price
         const totalPrice = document.getElementById('total-price');
         const totalPriceString = totalPrice.innerText;
@@ -168,4 +174,17 @@ function discountCalculate() {
     else {
         alert('Please provide a valid cuppon code');
     }
+};
+
+// go home btn
+function reloadPage() {
+    location.reload(true);
+};
+
+// purchace btn
+ function disabledPurchaseBtn(total) {
+    const purchaceBtn = document.getElementById('purchace-btn');
+    if (total > 0){
+        purchaceBtn.removeAttribute("disabled");
+    };
 };
